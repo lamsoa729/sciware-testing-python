@@ -12,20 +12,29 @@ def test_sum_numbers_yours():
     # write another test of the sum_numbers function
     sum = sum_numbers([1, -2, 9876543])
     assert sum == 9876542
-    pass
+
+
+def test_sum_numbers_your_nonintegers():
+    # write another test of the sum_numbers function
+    sum = sum_numbers([1.5, -2.5, 9876543])
+    assert sum == 9876542
 
 
 def test_sum_numbers_empty():
     # what's the sum of an empty list?
     pass
 
-# @pytest.mark.xfail(strict=True, raises=TypeError)
 
-
+@pytest.mark.xfail(strict=True, raises=TypeError)
 def test_sum_strings():
-    #assert sciware_testing_python.sum_numbers(["1","2","3"]) == "123"
-    pass
+    assert sum_numbers(["1", "2", "3"]) == "123"
 
-# Write a test for the add_vectors function
+
+def test_add_vectors():
+    # Write a test for the add_vectors function
+    a = [-3, 5.5, 1]
+    b = [0., -4.5, 2]
+    c = add_vectors(a, b)
+    assert c == [-3, 1., 3]
 
 # Write a test for sum_numbers on a list of booleans

@@ -21,8 +21,25 @@ def sum_numbers(number_list):
     6
 
     Add another doctest below
-    >>> 1
-    1
+    >>> a = [1,2,3]
+    >>> sum_numbers(a)
+    6
+
+    Notice that the above variable was still stored
+    >>> sum_numbers(a) == sum_numbers([1,2,3])
+    True
+
+    Importing works to as long as the package is installed on your environment
+    >>> import numpy as np
+    >>> sum_numbers(a) == np.sum(a)
+    True
+
+    Skip a test that is not working or you do not want to run just yet
+    >>> a = [1,2,3]
+    >>> sum_numbers(a) # doctest: +SKIP
+    -1
+
+
     """
 
     sum_val = 0
@@ -51,9 +68,10 @@ def add_vectors(vector_1, vector_2):
     add_vec = []
 
     for a, b in zip(vector_1, vector_2):
-        add_vec.append(a * b)
+        add_vec.append(a + b)
 
     return add_vec
+
 
 def count_ones(input_list):
     count = 0
@@ -64,4 +82,12 @@ def count_ones(input_list):
     return count
 
 # Make a new function which counts the number of twos in a list
-#def count_twos(input_list):
+
+
+def count_twos(input_list):
+    count = 0
+    for n in input_list:
+        if n == 2:
+            count += 1
+
+    return count
