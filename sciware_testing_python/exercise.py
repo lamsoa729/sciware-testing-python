@@ -29,10 +29,8 @@ def sum_numbers(number_list):
     >>> sum_numbers(a) == sum_numbers([1,2,3])
     True
 
-    Importing works to as long as the package is installed on your environment
-    >>> import numpy as np
-    >>> sum_numbers(a) == np.sum(a)
-    True
+
+
 
     Skip a test that is not working or you do not want to run just yet
     >>> a = [1,2,3]
